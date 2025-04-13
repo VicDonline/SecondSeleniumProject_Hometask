@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 public class SecondSeleniumProject {
 
     WebDriver driver;
+
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
