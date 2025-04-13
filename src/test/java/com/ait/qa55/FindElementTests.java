@@ -47,6 +47,7 @@ public class FindElementTests {
         WebElement header = driver.findElement(By.className("header"));
         System.out.println("Header class found: " + header.getTagName());
     }
+    
 
     @Test
     public void findFooterWrapperByClass() {
