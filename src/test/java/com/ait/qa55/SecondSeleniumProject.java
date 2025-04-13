@@ -21,7 +21,6 @@ public class SecondSeleniumProject {
         System.out.println("Sales!");
 
     }
-
     @AfterMethod
     public void tearDown() {
         driver.close();
