@@ -15,6 +15,7 @@ public class SecondSeleniumProject {
         driver.get("https://demowebshop.tricentis.com");
 
     }
+
     @Test
     public void openDemowebshopTest() {
         System.out.println("Sales!");
