@@ -47,7 +47,7 @@ public class FindElementTests {
         WebElement header = driver.findElement(By.className("header"));
         System.out.println("Header class found: " + header.getTagName());
     }
-    
+
 
     @Test
     public void findFooterWrapperByClass() {
@@ -83,7 +83,38 @@ public class FindElementTests {
     public void findLogoByClass() {
         WebElement logo = driver.findElement(By.className("header-logo"));
         System.out.println("Logo tag name: " + logo.getTagName());
+
+
     }
+    @Test
+    public void findElementBySimpleLocators(){
+        driver.findElement(By.id("bar-notification"));
+        driver.findElement(By.className("header"));
+        System.out.println(driver.findElement(By.className("header")).getText());
+        driver.findElement(By.linkText("Register"));
+        driver.findElement(By.partialLinkText("cart"));
+        System.out.println(driver.findElement(By.partialLinkText("cart")).getText());
+        driver.findElement(By.className("footer"));
+
+    }
+    @Test
+    public void findElementByCssSelector(){
+        driver.findElement(By.cssSelector("#bar-notification"));
+        System.out.println(driver.findElement(By.cssSelector("#bar-notification")).getText());
+        driver.findElement(By.cssSelector(".header"));
+        driver.findElement(By.cssSelector("[href='/cart']"));
+        driver.findElement(By.cssSelector("[href*='books']"));
+        driver.findElement(By.cssSelector("[href^='http']"));
+        driver.findElement(By.cssSelector("[href$='list']"));
+        driver.findElement(By.cssSelector("div.footer-poweredby a"));
+        System.out.println("10 elements found");
+
+
+
+
+
+    }
+
 
 
 }

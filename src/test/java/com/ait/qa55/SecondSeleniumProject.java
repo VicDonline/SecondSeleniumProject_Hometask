@@ -6,13 +6,21 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class SecondSeleniumProject {
 
     WebDriver driver;
+
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
-        driver.get("https://demowebshop.tricentis.com");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://demowebshop.tricentis.com");
+        // driver.navigate().back();
+        //driver.get("https://demowebshop.tricentis.com");
+        driver.navigate().refresh();// refresh
 
     }
 
@@ -22,8 +30,9 @@ public class SecondSeleniumProject {
 
     }
 
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void tearDown() {
+        // driver.quit();
         driver.close();
 
     }
